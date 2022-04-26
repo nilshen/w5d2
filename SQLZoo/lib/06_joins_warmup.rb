@@ -142,6 +142,5 @@ def alien_cast
   JOIN actors ON castings.actor_id = actors.id
   WHERE
     movies.title = 'Alien';
-
   SQL
 end
