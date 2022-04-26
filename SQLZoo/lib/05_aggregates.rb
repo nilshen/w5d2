@@ -26,7 +26,6 @@ def continents
     DISTINCT continent
   FROM 
     countries;
-
   SQL
 end
 
@@ -63,8 +62,7 @@ def group_population
     countries
   WHERE
     name IN ('France','Germany','Spain');
-  
-    SQL
+  SQL
 end
 
 def country_counts
@@ -105,6 +103,5 @@ def populous_continents
     continent
   HAVING
     SUM(population) >= 100000000;
-
   SQL
 end

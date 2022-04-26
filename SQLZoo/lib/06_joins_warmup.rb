@@ -91,12 +91,11 @@ def glenn_close_id
   # What id number does the actress 'Glenn Close' have?
   execute(<<-SQL)
   SELECT
-  id
+    id
   FROM 
-  actors
+    actors
   WHERE 
-  name = 'Glenn Close';
-
+    name = 'Glenn Close';
   SQL
 end
 
@@ -104,12 +103,11 @@ def casablanca_id
   # What is the id of the film 'Casablanca'?
   execute(<<-SQL)
   SELECT
-  id
+    id
   FROM
-  movies
+    movies
   WHERE
-  title = 'Casablanca';
-
+    title = 'Casablanca';
   SQL
 end
 
@@ -118,19 +116,19 @@ def casablanca_cast
   # in the previous question directly in your query (for example, id = 1).
   execute(<<-SQL)
     SELECT 
-     actors.name
+      actors.name
     FROM castings 
     JOIN movies ON castings.movie_id = movies.id
     JOIN actors ON castings.actor_id = actors.id
     WHERE
-     movies.id = (
+      movies.id = (
       SELECT
-      id
+        id
       FROM
-      movies
+        movies
       WHERE
-      title = 'Casablanca'
-     );
+        title = 'Casablanca'
+      );
   SQL
 end
 
@@ -143,7 +141,7 @@ def alien_cast
   JOIN movies ON castings.movie_id = movies.id
   JOIN actors ON castings.actor_id = actors.id
   WHERE
-   movies.title = 'Alien';
+    movies.title = 'Alien';
 
   SQL
 end
